@@ -4,16 +4,16 @@
   "alquiler_dia": 0.027,
   "tarifas": {
     "octopus_3": {
-      "potencia_p1": 0.088,
-      "potencia_p2": 0.025,
-      "energia_punta": 0.19,
-      "energia_llano": 0.16,
-      "energia_valle": 0.11
+      "potencia_p1": 0.095,
+      "potencia_p2": 0.027,
+      "energia_punta": 0.19438,
+      "energia_llano": 0.12056,
+      "energia_valle": 0.08616
     },
     "relax": {
-      "potencia_p1": 0.088,
-      "potencia_p2": 0.025,
-      "energia": 0.155
+      "potencia_p1": 0.095,
+      "potencia_p2": 0.027,
+      "energia": 0.119
     }
   },
   "referido": "https://share.octopusenergy.es/dismal-omelet-766",
