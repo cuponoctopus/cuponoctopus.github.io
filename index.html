@@ -220,12 +220,12 @@
         <h3>Resultados</h3>
         <p>💡 Tu factura actual: <strong>${actual.toFixed(2)} €</strong></p>
         <p>⚡ Octopus 3: <strong>${total3.toFixed(2)} €</strong>
-           ${cheaper==='o3' ? pill : ''}
            <span class="${dif3<0?'good':'bad'}">(${dif3<0?'ahorras':'pagas'} ${Math.abs(dif3).toFixed(2)} € / ${Math.abs(pct3)}%)</span>
+           ${cheaper==='o3' ? pill : ''}
         </p>
-        <p>🌿 Octopus Relax: <strong>${totalR.toFixed(2)} €</strong>
-           ${cheaper==='rel' ? pill : ''}
+        <p>🌿 Octopus Relax: <strong>${totalR.toFixed(2)} €</strong>           
            <span class="${difR<0?'good':'bad'}">(${difR<0?'ahorras':'pagas'} ${Math.abs(difR).toFixed(2)} € / ${Math.abs(pctR)}%)</span>
+           ${cheaper==='rel' ? pill : ''}
         </p>`;
     }
     document.getElementById('btnCalcular').addEventListener('click', calcular);
