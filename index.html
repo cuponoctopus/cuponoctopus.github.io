@@ -2,416 +2,116 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Código descuento Octopus Energy — <span id='mes-ano'>Auto</span></title>
-  <meta name="description" content="Ahorra en tu factura con el código descuento de Octopus Energy. Calculadora de luz, precios en tiempo (cuando disponible) y guía paso a paso.">
+  <title>Código descuento Octopus Energy</title>
+  <meta name="description" content="Calcula tu ahorro estimado con Octopus Energy en segundos.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://cuponoctopus.github.io/">
-  <meta property="og:title" content="Código descuento Octopus Energy — Calculadora y guía">
-  <meta property="og:description" content="Usa mi enlace de invitación y ahorra. Calcula tu factura y compara Octopus 3 vs Relax.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://cuponoctopus.github.io/">
   <style>
-    :root{
-      --brand:#009688;
-      --ink:#102a43;
-      --muted:#627d98;
-      --bg:#ffffff;
-      --card:#f7f7f7;
-      --ok:#2e7d32;
-      --warn:#ef6c00;
-      --bad:#c62828;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --ink:#e6edf3;
-        --muted:#9fb3c8;
-        --bg:#0b0f14;
-        --card:#11161c;
-      }
-      body{background:var(--bg); color:var(--ink);}
-      input, select{background:#0e141b; color:var(--ink); border:1px solid #223; }
-      .card{background:var(--card);}
-      .table th, .table td{border-color:#223;}
-    }
-    *{box-sizing:border-box}
-    body{font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif; max-width: 980px; margin: auto; padding: 24px; line-height: 1.6; color: var(--ink); background: var(--bg);}
-    h1{color: var(--brand); margin-bottom: .2rem}
-    a.cta{display:inline-block; background: var(--brand); color:#fff; padding: 12px 18px; border-radius: 8px; text-decoration: none; font-weight:600; box-shadow: 0 2px 8px rgba(0,0,0,.12)}
-    .muted{color: var(--muted)}
-    .chip{display:inline-block; background:#e0f2f1; color:#004d40; padding:2px 8px; border-radius:999px; font-size:.85rem}
-    .grid{display:grid; gap:14px}
-    .g-2{grid-template-columns: repeat(2, minmax(0,1fr));}
-    .g-3{grid-template-columns: repeat(3, minmax(0,1fr));}
-    .card{background: var(--card); border-radius: 12px; padding: 16px; border:1px solid rgba(0,0,0,.06)}
-    label{font-weight:600; font-size:.95rem}
-    input[type="number"]{width:100%; padding:10px 12px; border:1px solid #dadada; border-radius: 8px; margin-top:6px}
-    .table{width:100%; border-collapse: collapse; margin-top:10px}
-    .table th, .table td{border:1px solid #e6e6e6; padding:8px 10px; text-align:right}
-    .table th:first-child, .table td:first-child{text-align:left}
-    .sticky-cta{position:sticky; bottom:16px; display:flex; justify-content:flex-end; z-index:5; margin-top:12px}
-    .note{font-size:.92rem}
-    .success{color:var(--ok)}
-    .warn{color:var(--warn)}
-    .bad{color:var(--bad)}
-    .pill{border:1px dashed #cfd8dc; padding:10px; border-radius:8px}
-    footer{font-size:.9rem; color:var(--muted); margin-top:24px}
-    .small{font-size:.9rem}
-    .btn{display:inline-block; padding:8px 12px; border-radius:8px; border:1px solid #ccc; text-decoration:none; cursor:pointer; background:#fff}
-    .btn-row{display:flex; gap:8px; flex-wrap:wrap}
-    .banner{position:fixed; left:0; right:0; bottom:0; padding:12px; background: #0b3d32; color:#fff; z-index:999; display:none}
-    .banner .btn{background:#fff; border-color:#fff}
-    .kbd{background:#eee; padding:2px 6px; border-radius:6px; border:1px solid #ddd; font-family:monospace; font-size:.85rem}
+    body {font-family: system-ui, sans-serif; max-width:700px; margin:auto; padding:20px; line-height:1.6;}
+    h1 {color:#009688;}
+    label {display:block; margin-top:10px; font-weight:600;}
+    input {width:100%; padding:8px; border:1px solid #ccc; border-radius:6px;}
+    button {background:#009688; color:white; border:none; padding:10px 16px; border-radius:6px; margin-top:15px; cursor:pointer;}
+    button:hover {opacity:0.9;}
+    .resultado {margin-top:20px; padding:16px; border-radius:8px; background:#f4f4f4;}
+    .mejor {color:#2e7d32;}
+    .peor {color:#c62828;}
+    footer {margin-top:30px; font-size:0.9rem; color:#666;}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Codigo descuento Octopus Energy — <span id="mes-ano-text">Cargando…</span></h1>
-    <p class="muted">España · Tarifas <strong>Octopus 3</strong> y <strong>Octopus Relax</strong>. Calculadora de factura, comparador y precios cuando estén disponibles.</p>
-    <p><a class="cta" href="https://share.octopusenergy.es/dismal-omelet-766" rel="nofollow sponsored">👉 Usar mi enlace de invitación de Octopus</a></p>
-  </header>
+  <h1 id="titulo">Código descuento Octopus Energy</h1>
+  <p>Compara rápidamente cuánto pagarías con las tarifas <strong>Octopus 3</strong> y <strong>Relax</strong>.</p>
 
-  <section class="card">
-    <h2>Calculadora de factura (mensual)</h2>
-    <p class="small">Introduce tu potencia y consumo. Comparamos tu plan actual con <strong>Octopus 3</strong> y <strong>Octopus Relax</strong>. Impuesto eléctrico 5,11%, alquiler contador 0,027 €/día e IVA 21% incluidos automáticamente.</p>
-    <div class="grid g-3">
-      <div>
-        <label>Días del periodo</label>
-        <input id="dias" type="number" min="1" value="30">
-      </div>
-      <div>
-        <label>Potencia contratada P1 (kW)</label>
-        <input id="pot_p1" type="number" min="0" step="0.01" placeholder="ej. 4.6">
-      </div>
-      <div>
-        <label>Potencia contratada P2 (kW)</label>
-        <input id="pot_p2" type="number" min="0" step="0.01" placeholder="ej. 4.6">
-      </div>
-      <div>
-        <label>Consumo Punta (kWh)</label>
-        <input id="kwh_punta" type="number" min="0" step="0.1" placeholder="ej. 90">
-      </div>
-      <div>
-        <label>Consumo Llano (kWh)</label>
-        <input id="kwh_llano" type="number" min="0" step="0.1" placeholder="ej. 110">
-      </div>
-      <div>
-        <label>Consumo Valle (kWh)</label>
-        <input id="kwh_valle" type="number" min="0" step="0.1" placeholder="ej. 70">
-      </div>
-    </div>
+  <form id="calc">
+    <label>Días del periodo</label>
+    <input type="number" id="dias" value="30" min="1">
 
-    <h3 style="margin-top:14px">Tu plan actual (rellena tus precios)</h3>
-    <div class="grid g-3">
-      <div>
-        <label>Potencia P1 (€/kW·día)</label>
-        <input id="act_pot_p1" type="number" min="0" step="0.0001" placeholder="ej. 0.093">
-      </div>
-      <div>
-        <label>Potencia P2 (€/kW·día)</label>
-        <input id="act_pot_p2" type="number" min="0" step="0.0001" placeholder="ej. 0.031">
-      </div>
-      <div>
-        <label>Energía Punta (€/kWh)</label>
-        <input id="act_e_punta" type="number" min="0" step="0.0001" placeholder="ej. 0.22">
-      </div>
-      <div>
-        <label>Energía Llano (€/kWh)</label>
-        <input id="act_e_llano" type="number" min="0" step="0.0001" placeholder="ej. 0.18">
-      </div>
-      <div>
-        <label>Energía Valle (€/kWh)</label>
-        <input id="act_e_valle" type="number" min="0" step="0.0001" placeholder="ej. 0.12">
-      </div>
-      <div class="pill">
-        <span class="muted small">Alquiler contador: 0,027 €/día (incluido). Impuesto eléctrico 5,11% e IVA 21% se calculan automáticamente.</span>
-      </div>
-    </div>
+    <label>Potencia Punta (kW)</label>
+    <input type="number" id="pot_p1" step="0.01">
 
-    <h3 style="margin-top:14px">Octopus 3 (rellena o intenta cargar precios)</h3>
-    <div class="grid g-3">
-      <div><label>Potencia P1 (€/kW·día)</label><input id="o3_pot_p1" type="number" min="0" step="0.0001"></div>
-      <div><label>Potencia P2 (€/kW·día)</label><input id="o3_pot_p2" type="number" min="0" step="0.0001"></div>
-      <div><label>Energía Punta (€/kWh)</label><input id="o3_e_punta" type="number" min="0" step="0.0001"></div>
-      <div><label>Energía Llano (€/kWh)</label><input id="o3_e_llano" type="number" min="0" step="0.0001"></div>
-      <div><label>Energía Valle (€/kWh)</label><input id="o3_e_valle" type="number" min="0" step="0.0001"></div>
-      <div class="btn-row">
-        <button id="btnFetchO3" class="btn">Intentar cargar desde octopusenergy.es (beta)</button>
-      </div>
-    </div>
+    <label>Potencia Valle (kW)</label>
+    <input type="number" id="pot_p2" step="0.01">
 
-    <h3 style="margin-top:14px">Octopus Relax (rellena o intenta cargar precios)</h3>
-    <div class="grid g-3">
-      <div><label>Potencia P1 (€/kW·día)</label><input id="rel_pot_p1" type="number" min="0" step="0.0001"></div>
-      <div><label>Potencia P2 (€/kW·día)</label><input id="rel_pot_p2" type="number" min="0" step="0.0001"></div>
-      <div><label>Energía (€/kWh)</label><input id="rel_e" type="number" min="0" step="0.0001"></div>
-      <div class="btn-row">
-        <button id="btnFetchRelax" class="btn">Intentar cargar desde octopusenergy.es (beta)</button>
-      </div>
-    </div>
+    <label>Consumo Punta (kWh)</label>
+    <input type="number" id="kwh_p" step="0.1">
 
-    <div class="btn-row" style="margin-top:12px">
-      <button id="btnCalc" class="btn">Calcular</button>
-      <button id="btnDemo" class="btn">Rellenar ejemplo</button>
-      <button id="btnReset" class="btn">Reset</button>
-    </div>
+    <label>Consumo Llano (kWh)</label>
+    <input type="number" id="kwh_l" step="0.1">
 
-    <div id="resultados" class="grid g-3" style="margin-top:12px"></div>
-    <p id="fetchStatus" class="small muted"></p>
-  </section>
+    <label>Consumo Valle (kWh)</label>
+    <input type="number" id="kwh_v" step="0.1">
 
-  <section class="card">
-    <h2>Resultados y desglose</h2>
-    <table class="table" id="tablaDesglose">
-      <thead>
-        <tr>
-          <th>Concepto</th>
-          <th>Tu plan</th>
-          <th>Octopus 3</th>
-          <th>Octopus Relax</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-      <tfoot>
-        <tr>
-          <th>Total con IVA</th>
-          <th id="tot_act">–</th>
-          <th id="tot_o3">–</th>
-          <th id="tot_rel">–</th>
-        </tr>
-      </tfoot>
-    </table>
-    <p class="small muted">⚖️ Fórmula: Subtotal (energía + potencia) + Imp. eléctrico 5,11% + alquiler contador (0,027 €/día) + IVA 21% sobre todo lo anterior.</p>
-  </section>
+    <label>Lo que pagas ahora (€ / mes)</label>
+    <input type="number" id="actual" step="0.01">
 
-  <section class="card">
-    <h2>FAQ</h2>
-    <details><summary>¿De dónde salen los precios?</summary><p>Intentamos leerlos de <a href="https://octopusenergy.es/precios" target="_blank" rel="nofollow">octopusenergy.es/precios</a>. Si tu navegador bloquea por CORS, introduce los valores manualmente (recomendado por precisión).</p></details>
-    <details><summary>¿Puedo guardar mis datos?</summary><p>Sí. Tu navegador recuerda los últimos valores que introduzcas (localStorage). No enviamos datos a servidores.</p></details>
-    <details><summary>¿La calculadora incluye impuestos?</summary><p>Sí, aplica Impuesto eléctrico 5,11%, alquiler de contador 0,027 €/día e IVA 21%.</p></details>
-  </section>
+    <button type="button" id="btnCalcular">Calcular ahorro</button>
+  </form>
 
-  <div class="sticky-cta">
-    <a class="cta" href="https://share.octopusenergy.es/dismal-omelet-766" rel="nofollow sponsored">Usar enlace de invitación</a>
-  </div>
+  <div class="resultado" id="resultado"></div>
+
+  <p><a id="enlaceRef" href="#" target="_blank" rel="nofollow sponsored">👉 Usar mi código de invitación de Octopus</a></p>
 
   <footer>
+    <p id="fecha"></p>
     <p>Divulgación: este enlace es de referido, por lo que ambos recibimos crédito en factura.</p>
-    <p class="small">Actualizado automáticamente: <span id="fecha-actual"></span> · Hecho con ❤️ y GitHub Pages.</p>
   </footer>
 
-  <!-- Cookie banner y GA4 (cargado sólo si aceptas) -->
-  <div class="banner" id="cookieBanner">
-    <span>Usamos cookies analíticas anónimas (GA4) para mejorar la web. ¿Las aceptas?</span>
-    <div style="display:inline-flex; gap:8px; margin-left:10px">
-      <button class="btn" id="btnAccept">Aceptar</button>
-      <button class="btn" id="btnDecline">Rechazar</button>
-    </div>
-  </div>
-
   <script>
-    // Auto título por mes y fecha visible
-    (function(){
-      const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-      const d = new Date();
-      const txt = meses[d.getMonth()] + ' ' + d.getFullYear();
-      document.getElementById('mes-ano-text').textContent = txt.charAt(0).toUpperCase() + txt.slice(1);
-      document.getElementById('fecha-actual').textContent = new Date().toLocaleDateString('es-ES', { day:'2-digit', month:'long', year:'numeric' });
-      document.title = 'Código descuento Octopus Energy — ' + (meses[d.getMonth()][0].toUpperCase()+meses[d.getMonth()].slice(1)) + ' ' + d.getFullYear();
-    })();
+    let cfg={};
+    fetch('config.json')
+      .then(r=>r.json())
+      .then(data=>{
+        cfg=data;
+        document.getElementById('titulo').textContent =
+          `Código descuento Octopus Energy — ${cfg.mes.charAt(0).toUpperCase()+cfg.mes.slice(1)} ${cfg.ano}`;
+        document.getElementById('enlaceRef').href = cfg.referido;
+        document.getElementById('fecha').textContent = `Datos actualizados: ${cfg.mes} ${cfg.ano}`;
+      });
 
-    // Helpers
-    const € = v => Number(v || 0);
-    const dayRent = 0.027;
-    const impElec = 0.0511;
-    const iva = 0.21;
+    function calcular(){
+      const dias = +document.getElementById('dias').value;
+      const potP1 = +document.getElementById('pot_p1').value;
+      const potP2 = +document.getElementById('pot_p2').value;
+      const kwhP = +document.getElementById('kwh_p').value;
+      const kwhL = +document.getElementById('kwh_l').value;
+      const kwhV = +document.getElementById('kwh_v').value;
+      const actual = +document.getElementById('actual').value;
 
-    function calcular(plan){
-      const dias = €(document.getElementById('dias').value);
-      const pot1 = €(document.getElementById('pot_p1').value);
-      const pot2 = €(document.getElementById('pot_p2').value);
-      const kP = €(document.getElementById('kwh_punta').value);
-      const kL = €(document.getElementById('kwh_llano').value);
-      const kV = €(document.getElementById('kwh_valle').value);
+      if(!cfg.tarifas){ alert("Esperando datos del archivo config.json"); return; }
 
-      const get = id => €(document.getElementById(id).value);
+      const t = cfg.tarifas;
+      const base = (p1,p2,eP,eL,eV)=>((p1*potP1+p2*potP2)*dias)+(eP*kwhP+eL*kwhL+eV*kwhV);
+      const base3 = base(t.octopus_3.potencia_p1,t.octopus_3.potencia_p2,t.octopus_3.energia_punta,t.octopus_3.energia_llano,t.octopus_3.energia_valle);
+      const baseR = ((t.relax.potencia_p1*potP1 + t.relax.potencia_p2*potP2)*dias) + ((kwhP+kwhL+kwhV)*t.relax.energia);
 
-      const data = {
-        act: { pot1:get('act_pot_p1'), pot2:get('act_pot_p2'), eP:get('act_e_punta'), eL:get('act_e_llano'), eV:get('act_e_valle') },
-        o3:  { pot1:get('o3_pot_p1'),  pot2:get('o3_pot_p2'),  eP:get('o3_e_punta'),  eL:get('o3_e_llano'),  eV:get('o3_e_valle') },
-        rel: { pot1:get('rel_pot_p1'), pot2:get('rel_pot_p2'), e: get('rel_e') }
-      };
-
-      function totalActlike(prices, isRelax){
-        const pot  = (prices.pot1*pot1 + prices.pot2*pot2) * dias;           // €/kW·día * kW * días
-        const ene  = isRelax
-            ? (prices.e*(kP + kL + kV))
-            : (prices.eP*kP + prices.eL*kL + prices.eV*kV);
-        const base = pot + ene;
-        const impuesto = base * impElec;
-        const contador = dayRent * dias;
-        const preIVA = base + impuesto + contador;
-        const ivaCuota = preIVA * iva;
-        const total = preIVA + ivaCuota;
-        return {pot, ene, impuesto, contador, ivaCuota, total};
+      const addTaxes = base => {
+        const imp = base * cfg.impuesto_electrico;
+        const cont = cfg.alquiler_dia * dias;
+        const total = (base + imp + cont) * (1+cfg.iva);
+        return total;
       }
 
-      const R = {
-        act: totalActlike(data.act, false),
-        o3:  totalActlike(data.o3,  false),
-        rel: totalActlike({pot1:data.rel.pot1, pot2:data.rel.pot_p2, e:data.rel.e, eP:data.rel.e, eL:data.rel.e, eV:data.rel.e}, true)
-      };
+      const total3 = addTaxes(base3);
+      const totalR = addTaxes(baseR);
 
-      // CORRECCIÓN de typo: si arriba falla por pot_p2, usamos data.rel.pot2
-      if (!isFinite(R.rel.pot)) {
-        const Rrel = totalActlike({pot1:data.rel.pot1, pot2:data.rel.pot2, e:data.rel.e, eP:data.rel.e, eL:data.rel.e, eV:data.rel.e}, true);
-        R.rel = Rrel;
-      }
+      const dif3 = total3 - actual;
+      const difR = totalR - actual;
+      const pct3 = (dif3/actual*100).toFixed(1);
+      const pctR = (difR/actual*100).toFixed(1);
 
-      // Tarjetas resumen
-      const resultados = document.getElementById('resultados');
-      resultados.innerHTML = '';
-      function card(nombre, obj){
-        const el = document.createElement('div');
-        el.className = 'card';
-        el.innerHTML = `<h3>${nombre}</h3>
-          <p class="small">Total con IVA: <strong>${obj.total.toFixed(2)} €</strong></p>
-          <p class="muted small">Energía: ${obj.ene.toFixed(2)} € · Potencia: ${obj.pot.toFixed(2)} €</p>`;
-        resultados.appendChild(el);
-      }
-      card('Tu plan', R.act);
-      card('Octopus 3', R.o3);
-      card('Octopus Relax', R.rel);
-
-      // Tabla desglose
-      const tbody = document.querySelector('#tablaDesglose tbody');
-      tbody.innerHTML = '';
-      function row(label, a,b,c){
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${label}</td><td>${a}</td><td>${b}</td><td>${c}</td>`;
-        tbody.appendChild(tr);
-      }
-      const fmt = x => (isFinite(x)? x.toFixed(2)+' €' : '–');
-      row('Energía', fmt(R.act.ene), fmt(R.o3.ene), fmt(R.rel.ene));
-      row('Potencia', fmt(R.act.pot), fmt(R.o3.pot), fmt(R.rel.pot));
-      row('Imp. eléctrico (5,11%)', fmt(R.act.impuesto), fmt(R.o3.impuesto), fmt(R.rel.impuesto));
-      row('Alquiler contador', fmt(R.act.contador), fmt(R.o3.contador), fmt(R.rel.contador));
-      row('IVA (21%)', fmt(R.act.ivaCuota), fmt(R.o3.ivaCuota), fmt(R.rel.ivaCuota));
-      document.getElementById('tot_act').textContent = fmt(R.act.total);
-      document.getElementById('tot_o3').textContent  = fmt(R.o3.total);
-      document.getElementById('tot_rel').textContent = fmt(R.rel.total);
-
-      // Persistir inputs
-      const fields = document.querySelectorAll('input[type="number"]');
-      const state = {};
-      fields.forEach(f => state[f.id]=f.value);
-      localStorage.setItem('calcState', JSON.stringify(state));
+      const res = document.getElementById('resultado');
+      res.innerHTML = `
+        <h3>Resultados</h3>
+        <p>💡 Tu factura actual: <strong>${actual.toFixed(2)} €</strong></p>
+        <p>⚡ Octopus 3: <strong>${total3.toFixed(2)} €</strong> 
+          <span class="${dif3<0?'mejor':'peor'}">(${dif3<0?'ahorras':'pagas'} ${Math.abs(dif3).toFixed(2)} € / ${Math.abs(pct3)}%)</span></p>
+        <p>🌿 Octopus Relax: <strong>${totalR.toFixed(2)} €</strong> 
+          <span class="${difR<0?'mejor':'peor'}">(${difR<0?'ahorras':'pagas'} ${Math.abs(difR).toFixed(2)} € / ${Math.abs(pctR)}%)</span></p>
+      `;
     }
 
-    document.getElementById('btnCalc').addEventListener('click', calcular);
-    document.getElementById('btnReset').addEventListener('click', ()=>{
-      localStorage.removeItem('calcState'); location.reload();
-    });
-    document.getElementById('btnDemo').addEventListener('click', ()=>{
-      const demo = {
-        dias:30, pot_p1:4.6, pot_p2:4.6, kwh_punta:90, kwh_llano:110, kwh_valle:70,
-        act_pot_p1:0.093, act_pot_p2:0.031, act_e_punta:0.22, act_e_llano:0.18, act_e_valle:0.12,
-        o3_pot_p1:0.088, o3_pot_p2:0.025, o3_e_punta:0.19, o3_e_llano:0.16, o3_e_valle:0.11,
-        rel_pot_p1:0.088, rel_pot_p2:0.025, rel_e:0.155
-      };
-      Object.entries(demo).forEach(([k,v])=>{ const el=document.getElementById(k); if (el) el.value=v; });
-      calcular();
-    });
-
-    // Restaurar estado guardado
-    (function(){
-      const raw = localStorage.getItem('calcState');
-      if(raw){
-        try{
-          const obj = JSON.parse(raw);
-          Object.entries(obj).forEach(([k,v])=>{ const el=document.getElementById(k); if(el) el.value=v; });
-        }catch(e){}
-      }
-    })();
-
-    // Intentar cargar precios desde la página oficial (puede fallar por CORS)
-    async function tryFetchPrices(kind){
-      const status = document.getElementById('fetchStatus');
-      status.textContent = 'Intentando leer precios oficiales…';
-      try{
-        const res = await fetch('https://octopusenergy.es/precios', { mode:'cors' });
-        if(!res.ok) throw new Error('HTTP '+res.status);
-        const html = await res.text();
-        const map = {};
-        const grab = (label, re) => {
-          const m = html.match(re);
-          if(m) map[label] = parseFloat(m[1].replace(',','.'));
-        };
-
-        if(kind==='o3'){
-          grab('o3_e_punta', /Octopus\s*3[\s\S]*?Punta[^0-9]*([\d\.,]+)\s*€\s*\/\s*kWh/i);
-          grab('o3_e_llano', /Octopus\s*3[\s\S]*?Llano[^0-9]*([\d\.,]+)\s*€\s*\/\s*kWh/i);
-          grab('o3_e_valle', /Octopus\s*3[\s\S]*?Valle[^0-9]*([\d\.,]+)\s*€\s*\/\s*kWh/i);
-          grab('o3_pot_p1', /Potencia[^P]*P1[^0-9]*([\d\.,]+)\s*€\s*\/\s*kW·d[ií]a/i);
-          grab('o3_pot_p2', /Potencia[\s\S]*?P2[^0-9]*([\d\.,]+)\s*€\s*\/\s*kW·d[ií]a/i);
-          for(const k in map){ const el=document.getElementById(k); if(el && !el.value) el.value = map[k]; }
-        }else if(kind==='rel'){
-          grab('rel_e', /Relax[^0-9]*([\d\.,]+)\s*€\s*\/\s*kWh/i);
-          grab('rel_pot_p1', /Potencia[^P]*P1[^0-9]*([\d\.,]+)\s*€\s*\/\s*kW·d[ií]a/i);
-          grab('rel_pot_p2', /Potencia[\s\S]*?P2[^0-9]*([\d\.,]+)\s*€\s*\/\s*kW·d[ií]a/i);
-          for(const k in map){ const el=document.getElementById(k); if(el && !el.value) el.value = map[k]; }
-        }
-        status.textContent = Object.keys(map).length ? 'Precios rellenados automáticamente (revísalos antes de calcular).' : 'No se pudo detectar el formato de precios. Rellénalos manualmente.';
-      }catch(err){
-        status.textContent = 'No se pudo leer por restricciones del navegador (CORS). Introduce los valores manualmente para mayor precisión.';
-      }
-    }
-    document.getElementById('btnFetchO3').addEventListener('click', ()=>tryFetchPrices('o3'));
-    document.getElementById('btnFetchRelax').addEventListener('click', ()=>tryFetchPrices('rel'));
-
-    // Cookie banner + GA4 (solo si aceptas)
-    (function(){
-      const KEY='gaConsent';
-      const b = document.getElementById('cookieBanner');
-      const v = localStorage.getItem(KEY);
-      function loadGA(){
-        const GAID = window.GA_MEASUREMENT_ID || 'G-SPGEJ4QSYM'; // <-- Sustituye por tu ID real
-        if(!GAID || GAID==='G-SPGEJ4QSYM') return;
-        const s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id='+GAID;
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
-        window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', GAID, { anonymize_ip: true });
-      }
-      if(v===null){ b.style.display='block'; }
-      else if(v==='1'){ loadGA(); }
-
-      document.getElementById('btnAccept').onclick = ()=>{ localStorage.setItem(KEY,'1'); b.style.display='none'; loadGA(); };
-      document.getElementById('btnDecline').onclick = ()=>{ localStorage.setItem(KEY,'0'); b.style.display='none'; };
-    })();
-  </script>
-
-  <!-- FAQ Schema JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cómo usar el código de descuento de Octopus Energy?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Haz clic en el enlace de invitación, elige tu tarifa y completa el alta. El crédito se aplica cuando el cambio es efectivo." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Incluye impuestos la calculadora?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí, aplica Impuesto eléctrico 5,11%, alquiler de contador 0,027 €/día e IVA 21%." }
-      }
-    ]
-  }
+    document.getElementById('btnCalcular').addEventListener('click', calcular);
   </script>
 </body>
 </html>
