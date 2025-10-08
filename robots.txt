@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://octopusdescuento.github.io/sitemap.xml
